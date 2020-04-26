@@ -1,16 +1,16 @@
 <template>
   <div>
     <v-app-bar
-      color="deep-purple accent-4"
-      dense
-      dark
-      height="64"
-    >
-      <v-app-bar-nav-icon />
+      color="#FFB300"
 
-      <v-toolbar-title>
-        <v-icon>mdi-heart</v-icon>Todo
+    >
+<v-toolbar-title>
+        <v-icon class="mx-auto">mdi-home</v-icon>
+        BST
       </v-toolbar-title>
+      
+
+      <v-spacer/>
 
       <div class="flex-grow-1" />
       <v-text-field 
@@ -20,7 +20,8 @@
         label="Search..."
         solo
         flat
-        dark
+        color="#FFB300"
+        
         style="transform:translateY(15px);width:10px"
         @blur="isSearching=!isSearching"
       />
@@ -35,10 +36,8 @@
         icon
         href="https://github.com/guillaumeMECE"
         target="_blank"
-      >
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-     
+      />
+      <!-- <v-icon>mdi-heart</v-icon>
 
       <v-menu
         left
@@ -62,7 +61,7 @@
             <v-list-item-title>Option {{ n }}</v-list-item-title>
           </v-list-item>
         </v-list>
-      </v-menu>
+      </v-menu> -->
     </v-app-bar>
   </div>
 </template>
