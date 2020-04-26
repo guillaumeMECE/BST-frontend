@@ -40,8 +40,7 @@ module.exports = {
         // Doc: https://vuetifyjs.com/
         '@nuxtjs/vuetify',
       
-        // Doc: https://bootstrap-vue.js.org/docs/
-        'bootstrap-vue/nuxt',
+        
         // '@nuxtjs/bootstrap-vue',
         // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',

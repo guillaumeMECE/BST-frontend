@@ -1,22 +1,17 @@
 <template>
   <v-app>
-    <b-row>
-      <b-col>
-        <create-todo class="m-5" />
-        <list-todo class="m-5" />
-      </b-col>
-    </b-row>
+    <v-row>
+      <b-col />
+    </v-row>
   </v-app>
 </template>
 
 <script>
-import CreateTodo from '~/components/CreateTodo';
-import ListTodo from '~/components/ListTodo';
+
 
 export default {
     components: {
-        CreateTodo,
-        ListTodo
+        
     }
 };
 </script>
