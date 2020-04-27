@@ -1,18 +1,20 @@
 <template>
   <v-app>
     <v-row>
-      <b-col />
+      <v-col>
+        <TournamentCard />
+      </v-col>
     </v-row>
   </v-app>
 </template>
 
 <script>
-
+import TournamentCard from '~/components/TournamentCard.vue';
 
 export default {
     components: {
-        
-    }
+        TournamentCard,
+    },
 };
 </script>
 

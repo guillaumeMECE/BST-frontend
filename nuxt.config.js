@@ -11,12 +11,12 @@ module.exports = {
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+            { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap' }
-        ]
+            { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap' },
+        ],
     },
     /*
   ** Customize the progress-bar color
@@ -31,22 +31,23 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
     plugins: [
+        
     ],
     /*
   ** Nuxt.js modules
   */
     modules: [
-      
+
         // Doc: https://vuetifyjs.com/
         '@nuxtjs/vuetify',
-      
-        
+
+
         // '@nuxtjs/bootstrap-vue',
         // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
-        '@nuxtjs/eslint-module'
+        '@nuxtjs/eslint-module',
     ],
-    
+
     /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -54,8 +55,8 @@ module.exports = {
     axios: {
         baseURL: env.BASE_URL,
         redirectError: {
-            401: '/index'
-        }
+            401: '/index',
+        },
     },
     /*
   ** Build configuration
@@ -69,9 +70,9 @@ module.exports = {
                     enforce: 'pre',
                     test: /\.(js|vue)$/,
                     loader: 'eslint-loader',
-                    exclude: /(node_modules)/
+                    exclude: /(node_modules)/,
                 });
             }
-        }
-    }
+        },
+    },
 };

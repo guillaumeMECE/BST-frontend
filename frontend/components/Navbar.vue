@@ -1,44 +1,48 @@
 <template>
   <div>
     <v-app-bar
-      color="deep-purple accent-4"
-      dense
-      dark
-      height="64"
+      color="#FFB300"
+      class="red--text text--accent-3"
     >
-      <v-app-bar-nav-icon />
-
-      <v-toolbar-title>
-        <v-icon>mdi-heart</v-icon>Todo
+      <v-toolbar-title class="titre">
+        BRAWL STARS Tournament
       </v-toolbar-title>
 
+
+      <v-spacer />
+
       <div class="flex-grow-1" />
-      <v-text-field 
+      <v-text-field
+        
         v-show="isSearching"
         ref="writeArea"
         prepend-inner-icon="mdi-magnify"
         label="Search..."
         solo
         flat
-        dark
+        color="#FFB300"
+
         style="transform:translateY(15px);width:10px"
         @blur="isSearching=!isSearching"
       />
       <v-btn
         v-show="!isSearching"
         icon
+        color="light-blue darken-2"
         @click="writeSearch()"
       >
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
       <v-btn
+        v-show="!isSearching"
         icon
-        href="https://github.com/guillaumeMECE"
-        target="_blank"
+        color="light-blue darken-2"
+        @click.stop="showForm=true"
       >
-        <v-icon>mdi-heart</v-icon>
+        <v-icon>mdi-plus-box</v-icon>
       </v-btn>
-     
+      <TournamentForm v-model="showForm" />
+      <!-- <v-icon>mdi-heart</v-icon>
 
       <v-menu
         left
@@ -62,17 +66,23 @@
             <v-list-item-title>Option {{ n }}</v-list-item-title>
           </v-list-item>
         </v-list>
-      </v-menu>
+      </v-menu> -->
     </v-app-bar>
   </div>
 </template>
 
 <script>
+import TournamentForm from './TournamentForm.vue';
+
 export default {
+    components: {
+        TournamentForm
+    },
     props: {},
     data() {
         return {
-            isSearching: false
+            isSearching: false,
+            showForm: false
         };
     },
     mounted() {},
@@ -82,7 +92,22 @@ export default {
             this.$nextTick(() => {
                 this.$refs.writeArea.focus();
             });
-        }
-    },
+        },
+
+    }
 };
 </script>
+
+<style scoped>
+    @font-face {
+        font-family: "BrawlStarsDeputy";
+  src: url("../assets/fonts/BrawlStarsDeputy-Regular.ttf") format("tff");
+    }
+
+    .titre {
+  font-family: "BrawlStarsDeputy";
+  font-size: 30px;
+  text-shadow: #000000 1px 2px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+}
+  
+</style>

@@ -21,8 +21,8 @@
           <v-card-actions>
             <v-spacer style="height:36px" />
             <v-btn
-              v-show="hover ? true : false" 
-              text 
+              v-show="hover ? true : false"
+              text
               icon
               class="mx-0"
               @click="updateDone()"
@@ -30,8 +30,8 @@
               <v-icon>mdi-heart</v-icon>
             </v-btn>
             <v-btn
-              v-show="hover ? true : false" 
-              text 
+              v-show="hover ? true : false"
+              text
               icon
               class="mx-0"
               @click="writeTodo()"
@@ -39,9 +39,9 @@
               <v-icon>mdi-pencil</v-icon>
             </v-btn>
             <v-btn
-              v-show="hover ? true : false" 
-              text 
-              icon 
+              v-show="hover ? true : false"
+              text
+              icon
               color="red"
               class="mx-0"
               @click="removeTodo()"
@@ -72,8 +72,8 @@ export default {
     props: {
         todo: {
             type: Object,
-            default() { return { task: 'TASK HERE', done: false }; }
-        }
+            default() { return { task: 'TASK HERE', done: false }; },
+        },
     },
     data() {
         return {
@@ -81,7 +81,7 @@ export default {
             task: '',
             isShow: false,
             overlay: false,
-            isWriting: false
+            isWriting: false,
         };
     },
     mounted() {
@@ -101,7 +101,7 @@ export default {
                 _id: this.todo._id,
             };
             console.log('body', body);
-            
+
             this.$store.dispatch('todo/UPDATE_TODO', body);
             this.isWriting = false;
         },
@@ -117,7 +117,7 @@ export default {
         },
         colorState() {
             return this.done ? 'yellow lighten-2' : '';
-        }
+        },
     },
 };
 
