@@ -95,6 +95,7 @@ export default {
     .titre {
   font-family: "BrawlStarsDeputy";
   font-size: 30px;
+  text-shadow: #000000 1px 2px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
 }
   
 </style>

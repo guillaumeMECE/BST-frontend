@@ -2,15 +2,9 @@
   <div>
     <v-app-bar
       color="#FFB300"
-      class="red--text text--accent-4"
+      class="red--text text--accent-3"
     >
       <v-toolbar-title class="titre">
-        <v-icon
-          class="mx-auto"
-          color="light-blue darken-2"
-        >
-          mdi-gamepad-down
-        </v-icon>
         BRAWL STARS Tournament
       </v-toolbar-title>
 
@@ -19,6 +13,7 @@
 
       <div class="flex-grow-1" />
       <v-text-field
+        
         v-show="isSearching"
         ref="writeArea"
         prepend-inner-icon="mdi-magnify"
@@ -98,9 +93,7 @@ export default {
                 this.$refs.writeArea.focus();
             });
         },
-        addTournament() {
-          
-        }
+
     }
 };
 </script>
@@ -114,6 +107,7 @@ export default {
     .titre {
   font-family: "BrawlStarsDeputy";
   font-size: 30px;
+  text-shadow: #000000 1px 2px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
 }
   
 </style>

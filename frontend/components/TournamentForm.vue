@@ -14,12 +14,14 @@
           <v-row>
             <v-col>
               <v-text-field
+                v-model="name"
                 label="Tournament's name*"
                 required
               />
             </v-col>
             <v-col>
               <v-text-field
+                v-model="author"
                 label="Creator's name*"
                 hint="to easily find your tournament !"
                 required
@@ -29,13 +31,15 @@
           <v-row>
             <v-col>
               <v-select
-                :items="['FFA', 'RAZZIA', 'BRAWLBALL', 'SIEGE']"
+                v-model="mode"
+                :items="['soloShowdown', 'RAZZIA', 'BRAWLBALL', 'SIEGE']"
                 label="Mode*"
                 required
               />
             </v-col>
             <v-col>
               <v-textarea
+                v-model="description"
                 name="input-2-1"
                 filled
                 label="Description"
@@ -151,10 +155,39 @@
                 filled
                 clearable
                 label="Add player"
+                hint="#XXXXXXXX"
                 type="text"
-                @click:append-outer="sendMessage"
+                @click:append-outer="sendTag"
               />
             </v-col>
+          </v-row>
+
+          <v-row>
+            <v-card
+              class="mx-auto"
+              max-width="300"
+              tile
+            >
+              <v-list disabled>
+                <v-subheader>PLAYER'S TAGS</v-subheader>
+                <v-list-item-group
+                  v-model="items"
+                  color="primary"
+                >
+                  <v-list-item
+                    v-for="(item, i) in items"
+                    :key="i"
+                  >
+                    <v-list-item-icon>
+                      <v-icon>mdi-account-circle-outline</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content>
+                      <v-list-item-title v-text="item.tag" />
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-list-item-group>
+              </v-list>
+            </v-card>
           </v-row>
         </v-container>
         <small>*indicates required field</small>
@@ -162,9 +195,9 @@
       <v-card-actions>
         <v-spacer />
         <v-btn
-          v-btn
+          
           color="primary"
-          flat
+          
           @click.stop="show=false"
         >
           Close
@@ -172,7 +205,7 @@
         <v-btn
           color="blue darken-1"
           text
-          @click="show = false"
+          @click="addTournament()"
         >
           Save
         </v-btn>
@@ -190,12 +223,20 @@ export default {
     },
     data() {
         return {
-            start: null,
-            end: null,
+            name: '',
+            author: '',
+            description: '',
+            mode: '',
+            start: '',
+            end: '',
             modal1: false,
             modal2: false,
             picker: new Date().toISOString().substr(0, 10),
-            message: 'fdp!',
+            message: '',
+            item: 1,
+            items: [
+                
+            ],
             
         };
     },
@@ -205,18 +246,51 @@ export default {
                 return this.value;
             },
             set(value) {
+                this.clearTournament();
                 this.$emit('input', value);
             }
-        }
+        },
     },
     methods: {
-        sendMessage() {
-            this.clearMessage();
+        async addTournament(event) {
+            if (event) {
+                event.preventDefault();
+            }
+            const param = {
+                name: this.name,
+                author: this.author,
+                description: this.description,
+                mode: this.mode,
+                t_start: this.start,
+                t_end: this.end,
+                date: this.picker,
+                players: this.items,
+            };
+            console.log('param add', param);
+
+            // this.$store.dispatch('todo/ADD_TOURNAMENT_LIST', param);
+            this.clearTournament();
+            this.show = false;
         },
-        clearMessage() {
+        sendTag() {
+            console.log('items : ', this.items);
+            this.items.push({ tag: this.message });
+            this.clearTag();
+            
+        },
+        clearTag() {
             this.message = '';
         },
-        
+        clearTournament() {
+            this.name = '';
+            this.author = '';
+            this.description = '';
+            this.mode = '';
+            this.start = '';
+            this.end = '';
+            this.picker = '';
+            this.items = '';
+        }
     },
     
 };
