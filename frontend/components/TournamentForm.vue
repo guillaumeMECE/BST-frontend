@@ -46,69 +46,133 @@
             </v-col>
           </v-row>
 
-          <v-row />
+          <v-row justify="center">
+            <v-date-picker v-model="picker" />
+          </v-row>
+
+          <v-row>
+            <v-col
+              cols="11"
+              sm="5"
+            >
+              <v-dialog
+                ref="dialog1"
+                v-model="modal1"
+                :return-value.sync="start"
+                persistent
+                width="290px"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-text-field
+                    v-model="start"
+                    label="Heure de début*"
+                    prepend-icon="mdi-timelapse"
+                    readonly
+                    v-on="on"
+                  />
+                </template>
+                <v-time-picker
+                  v-if="modal1"
+                  v-model="start"
+                  :max="end"
+                  full-width
+                >
+                  <v-spacer />
+                  <v-btn
+                    text
+                    color="primary"
+                    @click="modal1 = false"
+                  >
+                    Cancel
+                  </v-btn>
+                  <v-btn
+                    text
+                    color="primary"
+                    @click="$refs.dialog1.save(start)"
+                  >
+                    OK
+                  </v-btn>
+                </v-time-picker>
+              </v-dialog>
+            </v-col>
+            <v-spacer />
+            <v-col
+              cols="11"
+              sm="5"
+            >
+              <v-dialog
+                ref="dialog2"
+                v-model="modal2"
+                :return-value.sync="end"
+                persistent
+                width="290px"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-text-field
+                    v-model="end"
+                    label="Heure de fin*"
+                    prepend-icon="mdi-timelapse"
+                    readonly
+                    v-on="on"
+                  />
+                </template>
+                <v-time-picker
+                  v-if="modal2"
+                  v-model="end"
+                  :min="start"
+                  full-width
+                >
+                  <v-spacer />
+                  <v-btn
+                    text
+                    color="primary"
+                    @click="modal2 = false"
+                  >
+                    Cancel
+                  </v-btn>
+                  <v-btn
+                    text
+                    color="primary"
+                    @click="$refs.dialog2.save(end)"
+                  >
+                    OK
+                  </v-btn>
+                </v-time-picker>
+              </v-dialog>
+            </v-col>
+          </v-row>
           
-          <v-col
-            cols="12"
-            sm="6"
-            md="4"
-          >
-            <v-text-field
-              label="Legal last name*"
-              hint="example of persistent helper text"
-              persistent-hint
-              required
-            />
-          </v-col>
-          <v-col cols="12">
-            <v-text-field
-              label="Email*"
-              required
-            />
-          </v-col>
-          <v-col cols="12">
-            <v-text-field
-              label="Password*"
-              type="password"
-              required
-            />
-          </v-col>
-          <v-col
-            cols="12"
-            sm="6"
-          >
-            <v-select
-              :items="['0-17', '18-29', '30-54', '54+']"
-              label="Age*"
-              required
-            />
-          </v-col>
-          <v-col
-            cols="12"
-            sm="6"
-          >
-            <v-autocomplete
-              :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-              label="Interests"
-              multiple
-            />
-          </v-col>
+
+          <v-row>
+            <v-col>
+              <v-text-field
+                v-model="message"
+                :append-outer-icon="message ? 'mdi-send' : ''"
+                filled
+                clearable
+                label="Add player"
+                type="text"
+                @click:append-outer="sendMessage"
+              />
+            </v-col>
+          </v-row>
         </v-container>
         <small>*indicates required field</small>
       </v-card-text>
       <v-card-actions>
         <v-spacer />
         <v-btn
-          color="blue darken-1"
-          text
-          @click="dialog = false"
+          v-btn
+          color="primary"
+          flat
+          @click.stop="show=false"
         >
           Close
         </v-btn>
         <v-btn
           color="blue darken-1"
           text
-          @click="dialog = false"
+          @click="show = false"
         >
           Save
         </v-btn>
@@ -118,9 +182,22 @@
 </template>
 
 <script>
+
+
 export default {
     props: {
         value: Boolean
+    },
+    data() {
+        return {
+            start: null,
+            end: null,
+            modal1: false,
+            modal2: false,
+            picker: new Date().toISOString().substr(0, 10),
+            message: 'fdp!',
+            
+        };
     },
     computed: {
         show: {
@@ -131,6 +208,16 @@ export default {
                 this.$emit('input', value);
             }
         }
-    }
+    },
+    methods: {
+        sendMessage() {
+            this.clearMessage();
+        },
+        clearMessage() {
+            this.message = '';
+        },
+        
+    },
+    
 };
 </script>
