@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <v-app>
     <Navbar />
     <v-container>
       <Nuxt />
     </v-container>
-  </div>
+  </v-app>
 </template>
 
 <script>

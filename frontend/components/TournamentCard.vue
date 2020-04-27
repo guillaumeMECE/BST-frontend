@@ -14,7 +14,7 @@
         >
       </v-list-item-avatar>
       <v-list-item-content>
-        <v-list-item-title class="headline">
+        <v-list-item-title class="titre">
           {{ tournament.name }}
         </v-list-item-title>
         <v-list-item-subtitle>par Super Brawler</v-list-item-subtitle>
@@ -92,9 +92,9 @@ export default {
   src: url("../assets/fonts/BrawlStarsDeputy-Regular.ttf") format("tff");
     }
 
-    .body {
-        font-family: BrawlStarsDeputy;
-    }
+    .titre {
+  font-family: "BrawlStarsDeputy";
+  font-size: 30px;
+}
   
-
 </style>

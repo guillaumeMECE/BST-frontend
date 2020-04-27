@@ -3,9 +3,11 @@
     v-model="show"
     max-width="500px"
   >
-    <v-card>
+    <v-card
+      color="blue lighten-4"
+    >
       <v-card-title>
-        <span class="headline">Ajouter un tournoi</span>
+        <span class="headline">Créer un tournoi</span>
       </v-card-title>
       <v-card-text>
         <v-container>
@@ -44,9 +46,7 @@
             </v-col>
           </v-row>
 
-          <v-row>
-            
-          </v-row>
+          <v-row />
           
           <v-col
             cols="12"

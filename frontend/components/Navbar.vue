@@ -2,12 +2,16 @@
   <div>
     <v-app-bar
       color="#FFB300"
+      class="red--text text--accent-4"
     >
-      <v-toolbar-title>
-        <v-icon class="mx-auto">
+      <v-toolbar-title class="titre">
+        <v-icon
+          class="mx-auto"
+          color="light-blue darken-2"
+        >
           mdi-gamepad-down
         </v-icon>
-        BST
+        BRAWL STARS Tournament
       </v-toolbar-title>
 
 
@@ -29,6 +33,7 @@
       <v-btn
         v-show="!isSearching"
         icon
+        color="light-blue darken-2"
         @click="writeSearch()"
       >
         <v-icon>mdi-magnify</v-icon>
@@ -36,6 +41,7 @@
       <v-btn
         v-show="!isSearching"
         icon
+        color="light-blue darken-2"
         @click.stop="showForm=true"
       >
         <v-icon>mdi-plus-box</v-icon>
@@ -98,3 +104,16 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+    @font-face {
+        font-family: "BrawlStarsDeputy";
+  src: url("../assets/fonts/BrawlStarsDeputy-Regular.ttf") format("tff");
+    }
+
+    .titre {
+  font-family: "BrawlStarsDeputy";
+  font-size: 30px;
+}
+  
+</style>
