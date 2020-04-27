@@ -5,7 +5,7 @@
     >
       <v-toolbar-title>
         <v-icon class="mx-auto">
-          mdi-home
+          mdi-gamepad-down
         </v-icon>
         BST
       </v-toolbar-title>
@@ -34,10 +34,13 @@
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
       <v-btn
+        v-show="!isSearching"
         icon
-        href="https://github.com/guillaumeMECE"
-        target="_blank"
-      />
+        @click.stop="showForm=true"
+      >
+        <v-icon>mdi-plus-box</v-icon>
+      </v-btn>
+      <TournamentForm v-model="showForm" />
       <!-- <v-icon>mdi-heart</v-icon>
 
       <v-menu
@@ -68,11 +71,17 @@
 </template>
 
 <script>
+import TournamentForm from './TournamentForm.vue';
+
 export default {
+    components: {
+        TournamentForm
+    },
     props: {},
     data() {
         return {
             isSearching: false,
+            showForm: false
         };
     },
     mounted() {},
@@ -83,6 +92,9 @@ export default {
                 this.$refs.writeArea.focus();
             });
         },
-    },
+        addTournament() {
+          
+        }
+    }
 };
 </script>
