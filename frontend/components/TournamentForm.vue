@@ -175,14 +175,14 @@
                   color="primary"
                 >
                   <v-list-item
-                    v-for="(item, i) in items"
-                    :key="i"
+                    v-for="item in items"
+                    :key="item"
                   >
                     <v-list-item-icon>
                       <v-icon>mdi-account-circle-outline</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                      <v-list-item-title v-text="item.tag" />
+                      <v-list-item-title v-text="item" />
                     </v-list-item-content>
                   </v-list-item>
                 </v-list-item-group>
@@ -268,13 +268,13 @@ export default {
             };
             console.log('param add', param);
 
-            // this.$store.dispatch('todo/ADD_TOURNAMENT_LIST', param);
+            this.$store.dispatch('tournament/ADD_TOURNAMENT_LIST', param);
             this.clearTournament();
             this.show = false;
         },
         sendTag() {
             console.log('items : ', this.items);
-            this.items.push({ tag: this.message });
+            this.items.push(this.message);
             this.clearTag();
             
         },
@@ -289,7 +289,7 @@ export default {
             this.start = '';
             this.end = '';
             this.picker = '';
-            this.items = '';
+            this.items = [];
         }
     },
     

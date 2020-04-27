@@ -32,8 +32,10 @@ export const actions = {
 
     async ADD_TOURNAMENT_LIST({ dispatch, commit }, body) {
         try {
+            console.log('waaaaaaaiIIII');
+            
             await this.$axios.$post('http://localhost:3030/api/tournament', body);
-            dispatch('FETCH_TOURNAMENT_LIST');
+            // dispatch('FETCH_TOURNAMENT_LIST');
         } catch (error) {
             console.log('ERROR MESSAGE :', error.message);
             console.log('ERROR :', error);
