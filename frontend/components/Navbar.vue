@@ -2,18 +2,19 @@
   <div>
     <v-app-bar
       color="#FFB300"
-
     >
-<v-toolbar-title>
-        <v-icon class="mx-auto">mdi-home</v-icon>
+      <v-toolbar-title>
+        <v-icon class="mx-auto">
+          mdi-home
+        </v-icon>
         BST
       </v-toolbar-title>
-      
 
-      <v-spacer/>
+
+      <v-spacer />
 
       <div class="flex-grow-1" />
-      <v-text-field 
+      <v-text-field
         v-show="isSearching"
         ref="writeArea"
         prepend-inner-icon="mdi-magnify"
@@ -21,7 +22,7 @@
         solo
         flat
         color="#FFB300"
-        
+
         style="transform:translateY(15px);width:10px"
         @blur="isSearching=!isSearching"
       />
@@ -71,7 +72,7 @@ export default {
     props: {},
     data() {
         return {
-            isSearching: false
+            isSearching: false,
         };
     },
     mounted() {},
@@ -81,7 +82,7 @@ export default {
             this.$nextTick(() => {
                 this.$refs.writeArea.focus();
             });
-        }
+        },
     },
 };
 </script>

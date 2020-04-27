@@ -45,18 +45,18 @@ export const actions = {
         } catch (error) {
             console.log('ERROR MESSAGE :', error.message);
             console.log('ERROR :', error);
-        }  
+        }
     },
     async UPDATE_TODO({ dispatch, commit }, body) {
         try {
             const todoID = body._id;
-            delete body._id;            
+            delete body._id;
             await this.$axios.$patch(`/api/update/${todoID}`, body);
             dispatch('FETCH_TODO_LIST');
         } catch (error) {
             console.log('ERROR MESSAGE :', error.message);
             console.log('ERROR :', error);
-        }  
+        }
     },
 
 };

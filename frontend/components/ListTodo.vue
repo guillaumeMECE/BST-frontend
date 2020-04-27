@@ -6,7 +6,7 @@
       :key="todo._id"
       :todo="todo"
       class="my-3"
-    /> 
+    />
   </div>
 </template>
 
@@ -20,10 +20,12 @@ export default {
     },
     data() {
         return {
-            todos: [{ done: true,
+            todos: [{
+                done: true,
                 task: 'dev Update',
                 __v: 0,
-                _id: '5d3866ddda50172e346502e0' }]
+                _id: '5d3866ddda50172e346502e0',
+            }],
         };
     },
     computed: {
@@ -33,8 +35,8 @@ export default {
         this.$store.dispatch('todo/FETCH_TODO_LIST');
     },
     methods: {
-      
-    }
+
+    },
 };
 
 </script>
