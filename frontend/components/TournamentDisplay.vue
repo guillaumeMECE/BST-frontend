@@ -62,16 +62,37 @@
         </v-btn>
       </v-card-actions>
     </v-card>
-    <v-card
+
+
+    <!-- CLASSEMENT PLAYER -->
+    <ResultCard
+      v-for="(player,rank) in tournament.results"
+      :key="player.tag"
+      :player="player"
+      :rank="rank+1"
+      class="mx-auto my-5"
+    />
+    <!-- <v-card
       v-for="(player,id) in tournament.results"
       :key="player.tag"
       :player="player"
       style=" width: 50%;"
       class="mx-auto mt-2"
-    >
-      <v-card-text>
-        <v-row>
-          <v-col>
+    > -->
+    <!-- <v-card-text> -->
+    <!-- <v-row>
+          <v-col
+            cols="2"
+            style="background-color: lightgrey;"
+          >
+            {{ id+1 }}
+          </v-col>
+          <v-col />
+          <v-col
+            cols="2"
+            style="background-color: lightgrey;"
+          /> -->
+    <!-- <v-col>
             <v-badge
               color="green"
               :content="id+1"
@@ -83,17 +104,21 @@
           </v-col>
           <v-col class="playerName">
             {{ player.name }}
-          </v-col>
-        </v-row>
-      </v-card-text>
-    </v-card>
+          </v-col> -->
+    <!-- </v-row> -->
+    <!-- </v-card-text> -->
+    <!-- </v-card> -->
   </v-container>
 </template>
 
 <script>
 import axios from 'axios';
+import ResultCard from './ResultCard.vue';
 
 export default {
+    components: {
+        ResultCard
+    },
     props: {
         tag: {
             type: String,
