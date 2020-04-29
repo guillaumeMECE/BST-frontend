@@ -54,7 +54,9 @@
         text
         color="deep-purple accent-4"
       >
-        VOIR
+        <nuxt-link :to="`tournament/${tournament.tag}`">
+          VOIR
+        </nuxt-link>
       </v-btn>
      
       <v-spacer />
@@ -67,6 +69,7 @@
 </template>
 
 <script>
+
 export default {
     props: {
         tournament: {

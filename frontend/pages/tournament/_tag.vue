@@ -2,18 +2,22 @@
   <v-app>
     <v-row>
       <v-col>
-        caca
+        <!-- {{ this.$route.params.tag }} -->
+        <TournamentDisplay 
+          :tag="this.$route.params.tag"
+        />
       </v-col>
     </v-row>
   </v-app>
 </template>
 
 <script>
+import TournamentDisplay from '~/components/TournamentDisplay.vue';
 
 
 export default {
     components: {
-        
+        TournamentDisplay
     },
 };
 </script>
