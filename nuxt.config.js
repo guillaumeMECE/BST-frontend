@@ -1,11 +1,15 @@
-const env = require('./.env');
+// const env = require('./.env');
+require('dotenv').config();
 
 module.exports = {
     mode: 'universal',
     srcDir: './frontend',
+    // env: {
+    //     baseUrl: process.env.BASE_URL || 'http://localhost:3030'
+    // },
     /*
-  ** Headers of the page
-  */
+** Headers of the page
+*/
     head: {
         title: process.env.npm_package_name || '',
         meta: [
@@ -19,23 +23,23 @@ module.exports = {
         ],
     },
     /*
-  ** Customize the progress-bar color
-  */
+** Customize the progress-bar color
+*/
     loading: { color: '#fff' },
     /*
-  ** Global CSS
-  */
+** Global CSS
+*/
     css: [
     ],
     /*
-  ** Plugins to load before mounting the App
-  */
+** Plugins to load before mounting the App
+*/
     plugins: [
-        
+
     ],
     /*
-  ** Nuxt.js modules
-  */
+** Nuxt.js modules
+*/
     modules: [
 
         // Doc: https://vuetifyjs.com/
@@ -49,18 +53,18 @@ module.exports = {
     ],
 
     /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
+** Axios module configuration
+** See https://axios.nuxtjs.org/options
+*/
     axios: {
-        baseURL: env.BASE_URL,
+        baseURL: process.env.BASE_URL,
         redirectError: {
             401: '/index',
         },
     },
     /*
-  ** Build configuration
-  */
+** Build configuration
+*/
     build: {
     /*    ** You can extend webpack config here
     */
