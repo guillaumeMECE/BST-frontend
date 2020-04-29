@@ -22,7 +22,7 @@ export const actions = {
 
     async FETCH_TOURNAMENT_LIST({ state, commit }) {
         try {
-            const response = await this.$axios.$get('http://localhost:3030/api/tournament');
+            const response = await this.$axios.$get('/api/tournament');
             console.log(response);
             
             commit(SET_TOURNAMENT_LIST, response);
@@ -36,7 +36,7 @@ export const actions = {
         try {
             console.log('waaaaaaaiIIII');
             
-            await this.$axios.$post('http://localhost:3030/api/tournament', body);
+            await this.$axios.$post('/api/tournament', body);
             dispatch('FETCH_TOURNAMENT_LIST');
         } catch (error) {
             console.log('ERROR MESSAGE :', error.message);
@@ -45,7 +45,7 @@ export const actions = {
     },
     async DELETE_TOURNAMENT({ dispatch, commit }, params) {
         try {
-            await this.$axios.$delete(`http://localhost:3030/api/tournament/${params}`);
+            await this.$axios.$delete(`/api/tournament/${params}`);
             dispatch('FETCH_TOURNAMENT_LIST');
         } catch (error) {
             console.log('ERROR MESSAGE :', error.message);
@@ -56,7 +56,7 @@ export const actions = {
         try {
             const tournamentID = body._id;
             delete body._id;
-            await this.$axios.$patch(`http://localhost:3030/api/tournament/${tournamentID}`, body);
+            await this.$axios.$patch(`/api/tournament/${tournamentID}`, body);
             dispatch('FETCH_TOURNAMENT_LIST');
         } catch (error) {
             console.log('ERROR MESSAGE :', error.message);
