@@ -33,12 +33,12 @@ export default {
     data() {
         return {
             form: {
-                todo: ''
+                todo: '',
             },
             todos: '',
             typing: false,
             labelCreateTodo: 'Créer une note...',
-            isWriting: false
+            isWriting: false,
         };
     },
     methods: {
@@ -46,13 +46,13 @@ export default {
             if (event) {
                 event.preventDefault();
             }
-            
+
             this.typing = false;
             const param = {
-                task: this.form.todo 
+                task: this.form.todo,
             };
             console.log('param add', param);
-			
+
             this.$store.dispatch('todo/ADD_TODO_LIST', param);
             this.clearTodo();
         },
@@ -67,7 +67,7 @@ export default {
             this.$nextTick(() => {
                 this.$refs.writeArea.focus();
             });
-        }
-    }
+        },
+    },
 };
 </script>
