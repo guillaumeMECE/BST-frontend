@@ -23,6 +23,8 @@ export const actions = {
     async FETCH_TOURNAMENT_LIST({ state, commit }) {
         try {
             const response = await this.$axios.$get('http://localhost:3030/api/tournament');
+            console.log(response);
+            
             commit(SET_TOURNAMENT_LIST, response);
         } catch (error) {
             console.log('ERROR MESSAGE :', error.message);
@@ -35,7 +37,7 @@ export const actions = {
             console.log('waaaaaaaiIIII');
             
             await this.$axios.$post('http://localhost:3030/api/tournament', body);
-            // dispatch('FETCH_TOURNAMENT_LIST');
+            dispatch('FETCH_TOURNAMENT_LIST');
         } catch (error) {
             console.log('ERROR MESSAGE :', error.message);
             console.log('ERROR :', error);

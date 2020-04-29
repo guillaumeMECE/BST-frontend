@@ -2,7 +2,7 @@
   <v-app>
     <v-row>
       <v-col>
-        <TournamentList />
+        caca
       </v-col>
     </v-row>
   </v-app>

@@ -27,7 +27,7 @@ async function start() {
     app.use(nuxt.render);
 
     // Listen the server
-    app.listen(port, host);
+    app.listen(3000, host);
     console.log(`Server listening on http://${host}:${port}`);
 }
 start();
