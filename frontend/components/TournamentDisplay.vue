@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    {{ tournament.name }} {{ tournament.author }}
+    <!-- {{ tournament.name }} {{ tournament.author }} -->
     <v-card
       class="mx-auto"
       color="green"
@@ -61,6 +61,31 @@
           <v-icon>mdi-share-variant</v-icon>
         </v-btn>
       </v-card-actions>
+    </v-card>
+    <v-card
+      v-for="(player,id) in tournament.results"
+      :key="player.tag"
+      :player="player"
+      style=" width: 50%;"
+      class="mx-auto mt-2"
+    >
+      <v-card-text>
+        <v-row>
+          <v-col>
+            <v-badge
+              color="green"
+              :content="id+1"
+            >
+              <v-avatar color="green">
+                <span class="white--text headline"> {{ player.score }} </span>
+              </v-avatar>
+            </v-badge>
+          </v-col>
+          <v-col class="playerName">
+            {{ player.name }}
+          </v-col>
+        </v-row>
+      </v-card-text>
     </v-card>
   </v-container>
 </template>
@@ -128,4 +153,9 @@ export default {
   letter-spacing: 1px;
   text-shadow: #000000 0px 3px,#000000 -2px -2px, #000000 -2px 0px,#000000 2px 3px, #000000 -2px 3px,#000000 2px -2px, #000000 2px 0px, #000000 0px -2px;
 }
+.playerName{
+  font-size: 22px;
+  font-weight: bold;
+}
+
 </style>
