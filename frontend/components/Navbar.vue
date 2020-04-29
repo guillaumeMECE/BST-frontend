@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-app-bar
-      color="#FFB300"
-      class="red--text text--accent-3"
+      color="#006cf8"
+      class="white--text text--accent-3"
     >
       <v-toolbar-title class="titre">
         BRAWL STARS Tournament
@@ -13,7 +13,6 @@
 
       <div class="flex-grow-1" />
       <v-text-field
-        
         v-show="isSearching"
         ref="writeArea"
         prepend-inner-icon="mdi-magnify"
@@ -21,14 +20,13 @@
         solo
         flat
         color="#FFB300"
-
         style="transform:translateY(15px);width:10px"
         @blur="isSearching=!isSearching"
       />
       <v-btn
         v-show="!isSearching"
         icon
-        color="light-blue darken-2"
+        color="white darken-2"
         @click="writeSearch()"
       >
         <v-icon>mdi-magnify</v-icon>
@@ -36,7 +34,7 @@
       <v-btn
         v-show="!isSearching"
         icon
-        color="light-blue darken-2"
+        color="white darken-2"
         @click.stop="showForm=true"
       >
         <v-icon>mdi-plus-box</v-icon>
@@ -100,14 +98,15 @@ export default {
 
 <style scoped>
     @font-face {
-        font-family: "BrawlStarsDeputy";
-  src: url("../assets/fonts/BrawlStarsDeputy-Regular.ttf") format("tff");
+        font-family: "Nougat";
+  src: url("../assets/fonts/Nougat-ExtraBlack.ttf") format("tff");
     }
 
     .titre {
-  font-family: "BrawlStarsDeputy";
+  font-family: "Nougat";
   font-size: 30px;
-  text-shadow: #000000 1px 2px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+  font-weight: bold;
+  text-shadow: #000000 0px 3px,#000000 -2px -2px, #000000 -2px 0px,#000000 2px 3px, #000000 -2px 3px,#000000 2px -2px, #000000 2px 0px, #000000 0px -2px;
 }
   
 </style>

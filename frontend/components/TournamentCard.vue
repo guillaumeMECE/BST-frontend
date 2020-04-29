@@ -2,19 +2,19 @@
   <v-card
     max-width="344"
     class="mx-auto"
-    color="green"
+    color="#81d621"
     
     dark
   >
     <v-list-item>
       <v-list-item-avatar tile>
         <img
-          src="https://uccc9b3d456474d4c8bd752c31bf.previews.dropboxusercontent.com/p/thumb/AAzZn2dopw3V2Qbc6qudqgibKBFyRVkz4SrEmz07tks1q8XoajRb0vM5afL4SF4h-IXDqvEydJa3VyAwMHtT9pY6jTgbiE22rr2iXV4hTDABQLUmU0XF4RVwk_ESHRmhOgsHe5FjqhHMiYcPgb32lkOTFFWUn4AXjmSTkpsc0ODMF8nCioi4qmktLZWLzJmTtPLYfj72CYfP_n4EImsNrKHUMZW9mQ9XjoyV86ZgEu2Rfb3dQezAdze9xBgmuJS-mZPTT3fXB4qtNL_t0N4fgg5vF0pzTL5hNFYUo5SpXBHG3a_HRoGIFEQRFhQcRqkvCmBun8lHAJ11LezrQoyv-E3lQzCuYxfXjQoIOfGBKhZPPg/p.png?fv_content=true&size_mode=5"
+          src="https://vignette.wikia.nocookie.net/brawlstars/images/7/73/Showdown.png/revision/latest/scale-to-width-down/90?cb=20200304181857"
           alt="Razzia"
         >
       </v-list-item-avatar>
       <v-list-item-content>
-        <v-list-item-title class="titre">
+        <v-list-item-title class="titre pl-1">
           {{ tournament.name }}
         </v-list-item-title>
         <v-list-item-subtitle>par Super Brawler</v-list-item-subtitle>
@@ -88,14 +88,17 @@ export default {
 
 <style scoped>
     @font-face {
-        font-family: "BrawlStarsDeputy";
-  src: url("../assets/fonts/BrawlStarsDeputy-Regular.ttf") format("tff");
+        font-family: "Nougat";
+  src: url("../assets/fonts/Nougat-ExtraBlack.ttf") format("tff");
     }
 
     .titre {
-  font-family: "BrawlStarsDeputy";
-  font-size: 30px;
-  text-shadow: #000000 1px 2px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+  font-family: "Nougat";
+  font-size: 20px;
+  font-weight:bold;
+  letter-spacing: 1px;
+  text-shadow: #000000 0px 3px,#000000 -2px -2px, #000000 -2px 0px,#000000 2px 3px, #000000 -2px 3px,#000000 2px -2px, #000000 2px 0px, #000000 0px -2px;
+
 }
   
 </style>

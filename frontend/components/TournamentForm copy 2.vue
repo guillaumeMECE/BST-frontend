@@ -216,7 +216,7 @@
                 </v-btn>
               </v-stepper-content>
               <v-stepper-content step="2">
-                <!-- <v-row>
+                <v-row>
                   <v-col>
                     <v-text-field
                       v-model="message"
@@ -229,10 +229,10 @@
                       @click:append-outer="sendTag"
                     />
                   </v-col>
-                </v-row> -->
+                </v-row>
 
                 <v-row>
-                  <!-- <v-card
+                  <v-card
                     class="mx-auto"
                     max-width="500px"
                     tile
@@ -256,36 +256,8 @@
                         </v-list-item>
                       </v-list-item-group>
                     </v-list>
-                  </v-card> -->
-                  <v-col>
-                    <v-combobox
-                    
-                      v-model="items"
-                      chips
-                      clearable
-                      label="players tag"
-                      multiple
-                      prepend-icon="mdi-account-circle-outline"
-                      solo
-                    >
-                      <template
-                        v-slot:selection="{ attrs, item, select, selected }"
-                      >
-                        <v-chip
-                          v-bind="attrs"
-                          :input-value="selected"
-                          close
-                          @click="select"
-                          @click:close="remove(item)"
-                        >
-                          <span>#</span>
-                          <strong>{{ item }}</strong>
-                        </v-chip>
-                      </template>
-                    </v-combobox>
-                  </v-col>
+                  </v-card>
                 </v-row>
-
                 <v-spacer class="mt-5" />
                 <v-btn
                   color="blue darken-1"
@@ -365,8 +337,6 @@ export default {
             if (event) {
                 event.preventDefault();
             }
-            console.log('ITEMS :', this.items);
-            
             const param = {
                 name: this.name,
                 author: this.author,
