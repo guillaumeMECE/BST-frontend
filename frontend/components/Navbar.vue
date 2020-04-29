@@ -2,15 +2,16 @@
   <div>
     <v-app-bar
       color="#FFB300"
-
     >
-<v-toolbar-title>
-        <v-icon class="mx-auto">mdi-home</v-icon>
+      <v-toolbar-title>
+        <v-icon class="mx-auto">
+          mdi-home
+        </v-icon>
         BST
       </v-toolbar-title>
       
 
-      <v-spacer/>
+      <v-spacer />
 
       <div class="flex-grow-1" />
       <v-text-field 
