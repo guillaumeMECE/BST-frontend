@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import TournamentList from '~/components/TournamentList.vue';
+
 
 export default {
     components: {
-        TournamentList,
+        
     },
 };
 </script>
