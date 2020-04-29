@@ -6,6 +6,7 @@
   > 
     <h2>TOURNAMENTS</h2>
     <v-layout
+    
       wrap
       justify-space-around
     >

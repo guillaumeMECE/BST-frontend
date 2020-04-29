@@ -14,7 +14,7 @@
         >
       </v-list-item-avatar>
       <v-list-item-content>
-        <v-list-item-title class="titre">
+        <v-list-item-title class="titre pa-1">
           {{ tournament.name }}
         </v-list-item-title>
         <v-list-item-subtitle>Créé par <b>{{ tournament.author }}</b></v-list-item-subtitle>
@@ -52,10 +52,12 @@
     <v-card-actions>
       <v-btn
         text
-        color="deep-purple accent-4"
       >
-        <nuxt-link :to="`tournament/${tournament.tag}`">
-          VOIR
+        <nuxt-link
+          :to="`tournament/${tournament.tag}`"
+          class="nav-link"
+        >
+          voir le tournoi
         </nuxt-link>
       </v-btn>
      
@@ -102,14 +104,18 @@ export default {
 
 <style scoped>
     @font-face {
-        font-family: "BrawlStarsDeputy";
-  src: url("../assets/fonts/BrawlStarsDeputy-Regular.ttf") format("tff");
+        font-family: "Nougat";
+  src: url("../assets/fonts/Nougat-ExtraBlack.ttf") format("tff");
     }
 
     .titre {
-  font-family: "BrawlStarsDeputy";
-  font-size: 30px;
-  text-shadow: #000000 1px 2px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+  font-family: "Nougat";
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: #000000 0px 3px,#000000 -2px -2px, #000000 -2px 0px,#000000 2px 3px, #000000 -2px 3px,#000000 2px -2px, #000000 2px 0px, #000000 0px -2px;
 }
-  
+  .nav-link{
+ color:white
+  }
 </style>
