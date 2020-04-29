@@ -1,22 +1,24 @@
 <template>
-    <v-row class="card"
-    :class="`elevation-6`">
-      <v-col
-        class="rank text-center"
-        cols="1"
-      >
-        {{ rank }}
-      </v-col>
-      <v-col class="name">
-        {{player.name}}
-      </v-col>
-      <v-col
-        class="score text-center"
-        cols="3"
-      >
-        {{ player.score }} points
-      </v-col>
-    </v-row>
+  <v-row
+    class="card"
+    :class="`elevation-6`"
+  >
+    <v-col
+      class="rank text-center"
+      cols="1"
+    >
+      {{ rank }}
+    </v-col>
+    <v-col class="name">
+      {{ player.name }}
+    </v-col>
+    <v-col
+      class="score text-center"
+      cols="3"
+    >
+      {{ player.score }} points
+    </v-col>
+  </v-row>
 </template>
 
 <script>
