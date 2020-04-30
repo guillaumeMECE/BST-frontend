@@ -4,7 +4,7 @@
       color="#006cf8"
       class="white--text text--accent-3"
     >
-      <v-toolbar-title class="titre">
+      <v-toolbar-title class="titre px-2">
         BRAWL STARS Tournament
       </v-toolbar-title>
 
@@ -97,9 +97,10 @@ export default {
 </script>
 
 <style scoped>
+
     @font-face {
         font-family: "Nougat";
-  src: url("../assets/fonts/Nougat-ExtraBlack.ttf") format("tff");
+  src: url("../assets/fonts/Nougat-ExtraBlack.ttf");
     }
 
     .titre {
@@ -107,6 +108,8 @@ export default {
   font-size: 30px;
   font-weight: bold;
   text-shadow: #000000 0px 3px,#000000 -2px -2px, #000000 -2px 0px,#000000 2px 3px, #000000 -2px 3px,#000000 2px -2px, #000000 2px 0px, #000000 0px -2px;
+  
+
 }
   
 </style>

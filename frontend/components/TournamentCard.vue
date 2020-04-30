@@ -105,7 +105,7 @@ export default {
 <style scoped>
     @font-face {
         font-family: "Nougat";
-  src: url("../assets/fonts/Nougat-ExtraBlack.ttf") format("tff");
+  src: url("../assets/fonts/Nougat-ExtraBlack.ttf");
     }
 
     .titre {
