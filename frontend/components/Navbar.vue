@@ -5,7 +5,7 @@
       class="white--text text--accent-3"
     >
       <v-toolbar-title class="titre px-2">
-        BRAWL STARS Tournament
+        BSTournament
       </v-toolbar-title>
 
 
