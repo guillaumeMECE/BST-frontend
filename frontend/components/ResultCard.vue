@@ -114,7 +114,7 @@ export default {
        font-size: 20px;
   }
   .name{
-      font-family: "Nougat";
+      font-family: 'Lilita One', cursive;
       font-size: 20px;
       /* margin-left: 20px; */
   }
