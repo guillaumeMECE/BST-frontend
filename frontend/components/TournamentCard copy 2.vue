@@ -1,8 +1,7 @@
-<template >
-  <!-- <div> -->
-    <v-col xs="12" sm="12" md="12" lg="6" xl="4" align="center" >
+<template>
+  <div>
     <div
-      class=" container mx-3"
+      class=" container"
     >
       <nuxt-link
         :to="`tournament/${tournament.tag}`"
@@ -109,8 +108,7 @@
     </div>
          
     <div class="container__shadow" />
-  <!-- </div> -->
-    </v-col>
+  </div>
 </template>
 
 <script>
@@ -167,8 +165,7 @@ export default {
   .container{
     border: 5px solid #000000;
     border-bottom: 8px solid #000000;
-    /* width: 450px; */
-    width: 90%; 
+    width: 450px;
     background-color: white;
     padding: 0;
   }
@@ -180,9 +177,8 @@ export default {
     /* left: 50%; */
     opacity: 0.4;
     /* -webkit-transform: translate(-50%, 90%); */
-    transform: translate(0%);
-    /* width: 430px; */
-    width: 84%; 
+    transform: translate(3%);
+    width: 430px;
   }
 
   .container__img{

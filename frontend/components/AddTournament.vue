@@ -1,13 +1,16 @@
 <template>
-  <v-container
+  <v-row
     class="mx-auto" 
-    fluid 
-    grid-list-xl
+    justify="center"
     style="margin-top:100px"
   > 
-    <div @click.stop="showForm=true">
+    <v-col @click.stop="showForm=true"
+     sm="12" md="12" lg="6" xl="4"
+        cols="12"
+        >
       <div
-        class=" container text-center"
+        class=" container text-center "
+       
       >
         <div class="plus__text">
           Create Tournament
@@ -18,9 +21,9 @@
       </div>
          
       <div class="container__shadow" />
-    </div>
+    </v-col>
     <TournamentForm v-model="showForm" />
-  </v-container>
+  </v-row>
 </template>
 
 <script>
@@ -75,7 +78,7 @@ export default {
 }
   .container{
       position: relative;
-       width: 450px;
+       width: 90%;
     height: 300px;
     border: 5px solid #000000;
     border-bottom: 8px solid #000000;
@@ -88,8 +91,8 @@ export default {
     background: #423842;
     height: 8px;
     opacity: 0.4;
-    transform: translate(3%);
-    width: 430px;
+    transform: translate(10%);
+    width: 84%;
   }
   .plus__horizontale{
     position: absolute;
