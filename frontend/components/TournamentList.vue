@@ -1,21 +1,22 @@
 <template>
   <v-container
-    class="mx-auto" 
-    fluid 
-    grid-list-xl
+   
+     
   > 
     <h2>TOURNAMENTS</h2>
-    <v-layout
+    <!-- <v-layout
       wrap
       justify-space-around
-    >
+    > -->
+    <v-row  >
       <TournamentCard
         v-for="tournament in tournamentList.output"
         :key="tournament.tag"
         :tournament="tournament"
         class="my-3"
       />
-    </v-layout>
+    </v-row>
+    <!-- </v-layout> -->
   </v-container>
 </template>
 
