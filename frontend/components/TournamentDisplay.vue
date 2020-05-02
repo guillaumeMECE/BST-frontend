@@ -199,6 +199,7 @@ export default {
     
     /* width: 450px; */
     width: 100%; 
+    max-width: 1200px;
     background-color: white;
     padding: 0;
     text-align: left;
@@ -215,6 +216,7 @@ export default {
     transform: translate(0%);
     /* width: 430px; */
     width: 94%; 
+    max-width: 1100px;
   }
 
   .container__img{
