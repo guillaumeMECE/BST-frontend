@@ -1,74 +1,77 @@
 <template>
   <v-container>
     <!-- {{ tournament.name }} {{ tournament.author }} -->
-      <v-col
-    cols="12"
-    align="center"
-  >
-    <div
-      class=" container__card mx-3"
+    <v-col
+      cols="12"
+      align="center"
     >
+      <div
+        class=" container__card mx-3"
+      >
         <img
           src="~/assets/img/showdown_headerevent.png"
           class="container__img mb-n2"
-        />
-      <v-list-item class="title__container">
-        <v-list-item-avatar tile>
-          <img
-            src="https://vignette.wikia.nocookie.net/brawlstars/images/c/c6/Duo_Showdown.png/revision/latest/scale-to-width-down/340?cb=20200304181901"
-            alt="Razzia"
+        >
+        <v-list-item class="title__container">
+          <v-list-item-avatar tile>
+            <img
+              src="https://vignette.wikia.nocookie.net/brawlstars/images/c/c6/Duo_Showdown.png/revision/latest/scale-to-width-down/340?cb=20200304181901"
+              alt="Razzia"
+            >
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title class="titre pl-1 text-center">
+              {{ tournament.name }}
+            </v-list-item-title>
+            <v-list-item-subtitle class="titre__subtitle text-center">
+              Créé par <b>{{ tournament.author }}</b>
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-row>
+          <v-col
+            cols="6"
+            class="text-center time__text"
           >
-        </v-list-item-avatar>
-        <v-list-item-content >
-          <v-list-item-title class="titre pl-1 text-center">
-            {{ tournament.name }}
-          </v-list-item-title>
-          <v-list-item-subtitle class="titre__subtitle text-center">
-            Créé par <b>{{ tournament.author }}</b>
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-      <v-row>
-        <v-col
-          cols="6"
-          class="text-center time__text"
-        >
-          Débute à
-        </v-col>
-        <v-col
-          cols="6"
-          class="text-center time__text"
-        >
-          Se termine à
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col
-          cols="6"
-          class="text-center time__text"
-        >
-          <v-chip>
-            <!-- {{ start_time[1] }} le {{ start_time[0] }} -->
-            {{ start_time[1] }}
-          </v-chip>
-        </v-col>
-        <v-col
-          cols="6"
-          class="text-center time__text"
-        >
-          <v-chip>
-            <!-- {{ end_time[1] }} le {{ end_time[0] }} -->
-            {{ end_time[1] }}
-          </v-chip>
-        </v-col>
-      </v-row>
-    </div>
+            Débute à
+          </v-col>
+          <v-col
+            cols="6"
+            class="text-center time__text"
+          >
+            Se termine à
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col
+            cols="6"
+            class="text-center time__text"
+          >
+            <v-chip>
+              <!-- {{ start_time[1] }} le {{ start_time[0] }} -->
+              {{ start_time[1] }}
+            </v-chip>
+          </v-col>
+          <v-col
+            cols="6"
+            class="text-center time__text"
+          >
+            <v-chip>
+              <!-- {{ end_time[1] }} le {{ end_time[0] }} -->
+              {{ end_time[1] }}
+            </v-chip>
+          </v-col>
+        </v-row>
+      </div>
          
-    <div class="container__shadow" />
-  </v-col>
+      <div class="container__shadow" />
+    </v-col>
 
     <!-- CLASSEMENT PLAYER -->
-    <v-row justify="center" class="my-3">
+    <v-row
+      justify="center"
+      class="my-3"
+    >
       <ResultCard
         v-for="(player, rank) in tournament.results"
         :key="player.tag"

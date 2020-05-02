@@ -18,7 +18,7 @@
         <img
           src="~/assets/img/showdown_headerevent.png"
           class="container__img mb-n2"
-        />
+        >
       </nuxt-link>
       <v-list-item class="title__container">
         <v-list-item-avatar tile>

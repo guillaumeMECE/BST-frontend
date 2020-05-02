@@ -64,7 +64,10 @@
     </v-card>
 
     <!-- CLASSEMENT PLAYER -->
-    <v-row justify="center" class="my-3">
+    <v-row
+      justify="center"
+      class="my-3"
+    >
       <ResultCard
         v-for="(player, rank) in tournament.results"
         :key="player.tag"

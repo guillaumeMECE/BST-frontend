@@ -8,27 +8,27 @@
       :class="`elevation-6`"
     >
       <v-col
+        v-if="rank===1"
         class="rank text-center ma-0 pa-0 pt-1"
         cols="2"
         md="1"
         lg="1"
         xl="1"
-        v-if="rank===1"
-        
       >
-      <img class="star ma-0" src="~/assets/img/logo_starwings.png" />
-        
+        <img
+          class="star ma-0"
+          src="~/assets/img/logo_starwings.png"
+        >
       </v-col>
       <v-col
+        v-else
         class="rank text-center"
         cols="2"
         md="1"
         lg="1"
         xl="1"
-        v-else
       >
-      {{rank}}
-        
+        {{ rank }}
       </v-col>
       <v-col class="name">
         {{ player.name }}
