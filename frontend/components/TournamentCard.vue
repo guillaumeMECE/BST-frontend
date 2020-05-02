@@ -1,6 +1,13 @@
-<template >
+<template>
   <!-- <div> -->
-    <v-col xs="12" sm="12" md="12" lg="6" xl="4" align="center" >
+  <v-col
+    xs="12"
+    sm="12"
+    md="12"
+    lg="6"
+    xl="4"
+    align="center"
+  >
     <div
       class=" container mx-3"
     >
@@ -8,11 +15,10 @@
         :to="`tournament/${tournament.tag}`"
         class="nav-link"
       >
-        <v-img
-          src="https://www.papyswarriors.com/medias/images/showdown-event-brawl-stars.jpg"
-          height="200"
-          class="container__img"
-        />
+        <img
+          src="~/assets/img/showdown_headerevent.png"
+          class="container__img mb-n2"
+        >
       </nuxt-link>
       <v-list-item class="title__container">
         <v-list-item-avatar tile>
@@ -64,53 +70,10 @@
           </v-chip>
         </v-col>
       </v-row>
-
-      <!-- <v-card-text
-        color="deep-purple accent-4"
-        class="text-center"
-      >
-        <b>{{ tournament.description }}</b>
-      </v-card-text>
-
-      <v-divider class="mx-4" />
-
-      <v-card-title>Joueurs inscrits : {{ tournament.players.length }}</v-card-title>
-
-      <div class="text-center">
-        <v-chip class="ma-2">
-          Débute à {{ start_time[1] }} le {{ start_time[0] }}
-        </v-chip>
-
-        <v-spacer />
-
-        <v-chip class="ma-2">
-          Se termine à {{ end_time[1] }} le {{ end_time[0] }}
-        </v-chip>
-      </div>
-
-      <v-card-actions>
-        <v-btn
-          text
-        >
-          <nuxt-link
-            :to="`tournament/${tournament.tag}`"
-            class="nav-link"
-          >
-            voir le tournoi
-          </nuxt-link>
-        </v-btn>
-     
-        <v-spacer />
-      
-        <v-btn icon>
-          <v-icon>mdi-share-variant</v-icon>
-        </v-btn>
-      </v-card-actions> -->
     </div>
          
     <div class="container__shadow" />
-  <!-- </div> -->
-    </v-col>
+  </v-col>
 </template>
 
 <script>
@@ -154,6 +117,7 @@ export default {
 
     .titre {
   /* font-family: "Nougat"; */
+  
   font-family: 'Lilita One';
   font-size: 22px;
   font-weight: bold;
@@ -171,6 +135,7 @@ export default {
     width: 90%; 
     background-color: white;
     padding: 0;
+    text-align: left;
   }
  
   .container__shadow{
@@ -186,7 +151,9 @@ export default {
   }
 
   .container__img{
-    width: 100%;
+        width: 100%;
+    height: 200px;
+    object-fit: cover;
   }
   .title__container{
     background-color: #70c054;
