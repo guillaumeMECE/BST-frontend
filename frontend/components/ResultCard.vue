@@ -87,7 +87,7 @@ export default {
     }
 
     .titre {
-  font-family: "Nougat";
+  font-family: 'Lilita One', cursive;
   font-size: 30px;
   font-weight: bold;
   text-shadow: #000000 0px 3px,#000000 -2px -2px, #000000 -2px 0px,#000000 2px 3px, #000000 -2px 3px,#000000 2px -2px, #000000 2px 0px, #000000 0px -2px;
@@ -103,13 +103,13 @@ export default {
   .score{
        background-color: #ffb921;
        clip-path: polygon(12px 0,100% 0,100% 100%,0 100%);
-       font-family: "Nougat";
+       font-family: 'Lilita One', cursive;
   font-size: 20px;
   }
   .rank{
       background-color: #efefef ;
        /* clip-path: polygon(12px 0,100% 0,100% 100%,0 100%); */
-       font-family: "Nougat";
+       font-family: 'Lilita One', cursive;
        font-size: 20px;
   }
   .name{
