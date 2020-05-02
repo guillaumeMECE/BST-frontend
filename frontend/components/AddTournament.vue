@@ -4,13 +4,16 @@
     justify="center"
     style="margin-top:100px"
   > 
-    <v-col @click.stop="showForm=true"
-     sm="12" md="12" lg="6" xl="4"
-        cols="12"
-        >
+    <v-col
+      sm="12"
+      md="12"
+      lg="6"
+      xl="4"
+      cols="12"
+      @click.stop="showForm=true"
+    >
       <div
         class=" container text-center "
-       
       >
         <div class="plus__text">
           Create Tournament

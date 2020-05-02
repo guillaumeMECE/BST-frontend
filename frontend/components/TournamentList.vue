@@ -1,14 +1,11 @@
 <template>
-  <v-container
-   
-     
-  > 
+  <v-container> 
     <h2>TOURNAMENTS</h2>
     <!-- <v-layout
       wrap
       justify-space-around
     > -->
-    <v-row  >
+    <v-row>
       <TournamentCard
         v-for="tournament in tournamentList.output"
         :key="tournament.tag"

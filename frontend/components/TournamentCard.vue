@@ -1,6 +1,13 @@
-<template >
+<template>
   <!-- <div> -->
-    <v-col xs="12" sm="12" md="12" lg="6" xl="4" align="center" >
+  <v-col
+    xs="12"
+    sm="12"
+    md="12"
+    lg="6"
+    xl="4"
+    align="center"
+  >
     <div
       class=" container mx-3"
     >
@@ -110,7 +117,7 @@
          
     <div class="container__shadow" />
   <!-- </div> -->
-    </v-col>
+  </v-col>
 </template>
 
 <script>
