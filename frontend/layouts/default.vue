@@ -18,6 +18,6 @@ export default {
 </script>
 <style scoped>
 .main__container{
-  padding-top: 150px;
+  padding-top: 100px;
 }
 </style>
