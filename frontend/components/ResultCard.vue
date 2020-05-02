@@ -81,6 +81,7 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Lilita+One&display=swap');
     @font-face {
         font-family: "Nougat";
   src: url("../assets/fonts/Nougat-ExtraBlack.ttf") format("tff");
