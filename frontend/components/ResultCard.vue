@@ -115,7 +115,7 @@ export default {
   .name{
       font-family: "Nougat";
       font-size: 20px;
-      margin-left: 20px;
+      /* margin-left: 20px; */
   }
 
 .star{

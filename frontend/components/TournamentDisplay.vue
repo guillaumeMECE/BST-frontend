@@ -6,7 +6,7 @@
       align="center"
     >
       <div
-        class=" container__card mx-3"
+        class=" container__card"
       >
         <img
           src="~/assets/img/showdown_headerevent.png"
@@ -198,7 +198,7 @@ export default {
     border-bottom: 8px solid #000000;
     
     /* width: 450px; */
-    width: 90%; 
+    width: 100%; 
     background-color: white;
     padding: 0;
     text-align: left;
@@ -214,7 +214,7 @@ export default {
     /* -webkit-transform: translate(-50%, 90%); */
     transform: translate(0%);
     /* width: 430px; */
-    width: 86%; 
+    width: 94%; 
   }
 
   .container__img{
