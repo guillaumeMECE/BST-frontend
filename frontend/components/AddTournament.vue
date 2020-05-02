@@ -2,7 +2,6 @@
   <v-row
     class="mx-auto" 
     justify="center"
-    style="margin-top:100px"
   > 
     <v-col
       sm="12"

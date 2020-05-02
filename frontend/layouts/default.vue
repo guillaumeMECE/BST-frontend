@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Navbar />
-    <v-container>
+    <v-container class="main__container">
       <Nuxt />
     </v-container>
   </v-app>
@@ -16,3 +16,8 @@ export default {
     },
 };
 </script>
+<style scoped>
+.main__container{
+  padding-top: 150px;
+}
+</style>
