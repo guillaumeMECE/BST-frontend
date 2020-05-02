@@ -1,71 +1,67 @@
 <template>
   <v-container>
     <!-- {{ tournament.name }} {{ tournament.author }} -->
-      <v-col
-    cols="12"
-    align="center"
-  >
-    <div
-      class=" container__card mx-3"
+    <v-card
+      class="mx-auto"
+      color="green"
+      dark
+      style=" width: 75%"
     >
-        <img
-          src="~/assets/img/showdown_headerevent.png"
-          class="container__img mb-n2"
-        />
-      <v-list-item class="title__container">
+      <v-list-item>
         <v-list-item-avatar tile>
           <img
             src="https://vignette.wikia.nocookie.net/brawlstars/images/c/c6/Duo_Showdown.png/revision/latest/scale-to-width-down/340?cb=20200304181901"
             alt="Razzia"
           >
         </v-list-item-avatar>
-        <v-list-item-content >
-          <v-list-item-title class="titre pl-1 text-center">
+        <v-list-item-content>
+          <v-list-item-title class="titre pa-1">
             {{ tournament.name }}
           </v-list-item-title>
-          <v-list-item-subtitle class="titre__subtitle text-center">
+          <v-list-item-subtitle>
             Créé par <b>{{ tournament.author }}</b>
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-      <v-row>
-        <v-col
-          cols="6"
-          class="text-center time__text"
-        >
-          Débute à
-        </v-col>
-        <v-col
-          cols="6"
-          class="text-center time__text"
-        >
-          Se termine à
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col
-          cols="6"
-          class="text-center time__text"
-        >
-          <v-chip>
-            <!-- {{ start_time[1] }} le {{ start_time[0] }} -->
-            {{ start_time[1] }}
-          </v-chip>
-        </v-col>
-        <v-col
-          cols="6"
-          class="text-center time__text"
-        >
-          <v-chip>
-            <!-- {{ end_time[1] }} le {{ end_time[0] }} -->
-            {{ end_time[1] }}
-          </v-chip>
-        </v-col>
-      </v-row>
-    </div>
-         
-    <div class="container__shadow" />
-  </v-col>
+
+      <v-img
+        src="https://static-cdn.jtvnw.net/jtv_user_pictures/8a196a5f-8dec-428a-901a-4193f0dcd4de-profile_banner-480.png"
+        height="100"
+      />
+
+      <v-card-text
+        color="deep-purple accent-4"
+        class="text-center"
+      >
+        <b>{{ tournament.description }}</b>
+      </v-card-text>
+
+      <v-divider class="mx-4" />
+
+      <v-card-title>
+        Joueurs inscrits : {{ tournament.players.length }}
+      </v-card-title>
+
+      <div class="text-center">
+        <v-chip class="ma-2">
+          Débute à {{ start_time()[1] }} le {{ start_time()[0] }}
+        </v-chip>
+
+        <!-- <v-spacer /> -->
+
+        <v-chip class="ma-2">
+          Se termine à {{ end_time()[1] }} le {{ end_time()[0] }}
+        </v-chip>
+      </div>
+
+      <v-card-actions>
+        <v-spacer />
+
+        <v-btn icon>
+          <v-icon>mdi-share-variant</v-icon>
+        </v-btn>
+      </v-card-actions>
+    </v-card>
 
     <!-- CLASSEMENT PLAYER -->
     <v-row justify="center" class="my-3">
@@ -188,60 +184,5 @@ export default {
 .playerName {
   font-size: 22px;
   font-weight: bold;
-}
-
-  .container__card{
-    border: 5px solid #000000;
-    border-bottom: 8px solid #000000;
-    
-    /* width: 450px; */
-    width: 90%; 
-    background-color: white;
-    padding: 0;
-    text-align: left;
-    box-shadow:#000000 -5px -5px ;
-  }
- 
-  .container__shadow{
-
-    background: #423842;
-    height: 8px;
-    /* left: 50%; */
-    opacity: 0.4;
-    /* -webkit-transform: translate(-50%, 90%); */
-    transform: translate(0%);
-    /* width: 430px; */
-    width: 86%; 
-  }
-
-  .container__img{
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  .title__container{
-    background-color: #70c054;
-  }
-  .time__text{
-    font-weight: bold;
-    font-size: larger;
-  }
-  .titre__subtitle{
-    font-family: 'Lilita One', cursive;
-  }
-  .time__text{
-     font-family: 'Lilita One', cursive;
-     letter-spacing: 1px;
-  }
-
-     .titre {
-  /* font-family: "Nougat"; */
-  
-  font-family: 'Lilita One';
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: white;
-  text-shadow: #000000 0px 3px,#000000 -2px -2px, #000000 -2px 0px,#000000 2px 3px, #000000 -2px 3px,#000000 2px -2px, #000000 2px 0px, #000000 0px -2px;
 }
 </style>

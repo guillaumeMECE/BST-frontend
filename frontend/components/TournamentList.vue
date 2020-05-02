@@ -1,6 +1,6 @@
 <template>
   <v-container> 
-    <h2>TOURNAMENTS</h2>
+    <!-- <h2>TOURNAMENTS</h2> -->
     <!-- <v-layout
       wrap
       justify-space-around
