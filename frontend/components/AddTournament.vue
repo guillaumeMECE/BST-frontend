@@ -84,7 +84,7 @@ export default {
     height: 300px;
     border: 5px solid #000000;
     border-bottom: 8px solid #000000;
-   
+   box-shadow:#000000 -5px -5px ;
     background-color: white;
     padding: 0;
   }
