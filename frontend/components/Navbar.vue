@@ -32,15 +32,6 @@
     >
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
-    <v-btn
-      v-show="!isSearching"
-      icon
-      color="white darken-2"
-      @click.stop="showForm=true"
-    >
-      <v-icon>mdi-plus-box</v-icon>
-    </v-btn>
-    <TournamentForm v-model="showForm" />
     <!-- <v-icon>mdi-heart</v-icon>
 
       <v-menu
@@ -71,12 +62,8 @@
 </template>
 
 <script>
-import TournamentForm from './TournamentForm.vue';
 
 export default {
-    components: {
-        TournamentForm
-    },
     props: {},
     data() {
         return {

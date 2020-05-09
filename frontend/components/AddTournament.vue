@@ -11,20 +11,24 @@
       cols="12"
       @click.stop="showForm=true"
     >
-      <div
-        class=" container text-center "
+      <nuxt-link
+        :to="`tournament/add`"
       >
-        <div class="plus__text">
-          Create Tournament
-        </div>
+        <div
+          class=" container text-center "
+        >
+          <div class="plus__text">
+            Create Tournament
+          </div>
       
-        <div class="plus__horizontale" />
-        <div class="plus__verticale" />
-      </div>
+          <div class="plus__horizontale" />
+          <div class="plus__verticale" />
+        </div>
+      </nuxt-link>
          
       <div class="container__shadow" />
     </v-col>
-    <TournamentForm v-model="showForm" />
+    
   </v-row>
 </template>
 
@@ -33,19 +37,10 @@ import { mapGetters } from 'vuex';
 import TournamentForm from './TournamentForm.vue';
 
 export default {
-    components: {
-        TournamentForm
-    },
     filters: {
         reverse(value) {
             return value.slice().reverse();
         }
-    },
-    data() {
-        return {
-            list: [1, 2],
-            showForm: false
-        };
     },
     computed: {
         ...mapGetters({ tournamentList: 'tournament/tournament_list' }),
@@ -125,5 +120,6 @@ export default {
      transform: translate(-50%);
       font-family: 'Lilita One', cursive;
       font-size: x-large;
+      color: black;
   }
 </style>
