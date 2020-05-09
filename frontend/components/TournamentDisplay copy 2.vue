@@ -77,9 +77,8 @@
         :key="player.tag"
         :player="player"
         :rank="rank + 1"
-        class="mx-auto"
+        class="mx-auto "
       />
-      <InputTagForm class="mt-5"/>
     </v-row>
     <!-- <v-card
       v-for="(player,id) in tournament.results"
@@ -123,12 +122,10 @@
 <script>
 // import axios from 'axios';
 import ResultCard from './ResultCard.vue';
-import InputTagForm from './InputTagForm.vue';
 
 export default {
     components: {
         ResultCard,
-        InputTagForm,
     },
     props: {
         tag: {
@@ -253,5 +250,4 @@ export default {
   color: white;
   text-shadow: #000000 0px 3px,#000000 -2px -2px, #000000 -2px 0px,#000000 2px 3px, #000000 -2px 3px,#000000 2px -2px, #000000 2px 0px, #000000 0px -2px;
 }
-
 </style>
